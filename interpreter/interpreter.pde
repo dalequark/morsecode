@@ -96,7 +96,7 @@ void setup() {
 void draw() {
   int[] letter = new int[5]; //  No morse code letter consists of more than 5
                              //  dots and dashes.
-  while (myPort.available()) {
+  while (myPort.available() > 0) {
     int inByte = myPort.read();
     //  Ignore the \r and \n characters which Arduino prints
     if (inByte != 13 && inByte != 10) {
